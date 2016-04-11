@@ -14,3 +14,8 @@ $app->get('/article/{id}', function ($id) use ($app) {
     return $app['twig']->render('article.html.twig', array('article' => $article, 'comments' => $comments));
 })->bind('article');
 */
+
+// Home page
+$app->get('/', function () use ($app) {
+    return '<p><strong>Silex : </strong>Home page.</p>';
+});
