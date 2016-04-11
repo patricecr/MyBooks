@@ -17,5 +17,5 @@ $app->get('/article/{id}', function ($id) use ($app) {
 
 // Home page
 $app->get('/', function () use ($app) {
-    return '<p><strong>Silex : </strong>Home page.</p>';
-});
+    return $app['twig']->render('index.html.twig', array());
+})->bind('home');
