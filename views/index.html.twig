@@ -3,5 +3,10 @@
 {% block title %}Accueil{% endblock %}
 
 {% block content %}
-<h2>Dans le bloc !</h2>
+{% for book in books %}
+<book>
+    <h2><a class="bookTitle" href="{{ path('book', { 'id': book.id }) }}">{{ book.title }}</a></h2>
+    <p>{{ book.summary }}</p>
+</book>
+{% endfor %}
 {% endblock %}

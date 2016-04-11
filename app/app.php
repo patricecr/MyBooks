@@ -13,13 +13,11 @@ $app->register(new Silex\Provider\TwigServiceProvider(), array('twig.path' => __
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 
 // Register services.
-/*
-$app['dao.article'] = $app->share(function ($app) {
-    return new MicroCMS\DAO\ArticleDAO($app['db']);
+$app['dao.author'] = $app->share(function ($app) {
+    return new MyBooks\DAO\AuthorDAO($app['db']);
 });
-$app['dao.comment'] = $app->share(function ($app) {
-    $commentDAO = new MicroCMS\DAO\CommentDAO($app['db']);
-    $commentDAO->setArticleDAO($app['dao.article']);
-    return $commentDAO;
+$app['dao.book'] = $app->share(function ($app) {
+    $bookDAO = new MyBooks\DAO\BookDAO($app['db']);
+    $bookDAO->setAuthorDAO($app['dao.author']);
+    return $bookDAO;
 });
-*/

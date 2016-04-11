@@ -1,8 +1,8 @@
 <?php
 namespace MyBooks\Domain;
 
-class Author
-{
+class Author {
+    
     /**
      * Author id.
      *
